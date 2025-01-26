@@ -69,10 +69,9 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-screen bg-white -100 flex flex-col items-center justify-center">
-      
-      <div className="w-3/4 max-w-4xl bg-white  rounded-xl p-8 flex items-center gap-12">
-        <div className="flex-shrink-0 w-1/3">
+    <div className="h-screen w-screen bg-white flex flex-col items-center justify-center p-4">
+      <div className="w-full max-w-4xl bg-white rounded-xl p-8 flex flex-col md:flex-row items-center gap-12">
+        <div className="flex-shrink-0 w-full md:w-1/3">
           <Image
             src="/images/IMAGEN 8.png"
             alt="Delivery Scooter"
@@ -81,7 +80,7 @@ const App: React.FC = () => {
             className="w-full h-auto"
           />
         </div>
-        <div className="flex-1">
+        <div className="flex-1 w-full">
           <OrderTrackingForm onSearch={handleSearch} />
         </div>
       </div>

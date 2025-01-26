@@ -14,7 +14,7 @@ type NavigationMenuProps = {
 
 const NavigationMenu: React.FC<NavigationMenuProps> = ({ items }) => {
     return (
-        <div className="w-1/ bg-white h-full shadow-md border-r-8 border-orange-400 pl-10 pt-5">
+        <div className="w-full md:w-1/4 bg-white h-full shadow-md border-r-8 border-orange-400 pl-20 pt-5">
             <ul className="flex flex-col text-pink-600 font-bold text-lg">
                 {items.map((item, index) => (
                     <li
@@ -31,9 +31,9 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ items }) => {
 
 const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, price }) => {
     return (
-        <div className="bg-white shadow-md rounded-lg p-4 flex w-64">
-            <Image width={70} height={70} src={image} alt={title} className="w-28 h-28 object-cover rounded-md mr-4" />
-            <div className="flex flex-col justify-between">
+        <div className="bg-white shadow-md rounded-lg p-4 flex flex-col sm:flex-row w-full sm:w-64">
+            <Image width={70} height={70} src={image} alt={title} className="w-full sm:w-28 h-28 object-cover rounded-md mr-4" />
+            <div className="flex flex-col justify-between mt-4 sm:mt-0">
                 <div>
                     <h3 className="font-bold text-md text-gray-800">{title}</h3>
                     <p className="text-xs text-gray-600 mb-2">{description}</p>
@@ -65,8 +65,7 @@ const App: React.FC = () => {
   ];
 
   return (
-    <div className="h-screen w-screen flex bg-white mt-24">
- 
+    <div className="h-screen w-screen flex flex-col md:flex-row bg-white mt-24">
         <NavigationMenu items={navigationItems} />
 
         {/* Product Section */}

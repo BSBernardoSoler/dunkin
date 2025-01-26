@@ -57,7 +57,7 @@ export const Header = () => {
           <div className="md:hidden">
             <button
               onClick={toggleSidebar}
-              className="text-white p-2 rounded-md focus:outline-none"
+              className="text-orange-400 p-2 rounded-md focus:outline-none"
             >
               {showSidebar ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -120,13 +120,13 @@ export const Header = () => {
         } transition-transform duration-300 ease-in-out z-40 w-64`}
       >
         <div className="flex flex-col h-full p-4 space-y-4">
-          <NavLink textColor="white"href="/categories" onClick={closeSidebar}>
+          <NavLink textColor="white"href="/menu" onClick={closeSidebar}>
             Menu
           </NavLink>
-          <NavLink  textColor="white" href="/candidates" onClick={closeSidebar}>
+          <NavLink  textColor="white" href="/pedidos" onClick={closeSidebar}>
             Mis pedidos
           </NavLink>
-          <NavLink textColor="white" href="/votes" onClick={closeSidebar}>
+          <NavLink textColor="white" href="/encuentranos" onClick={closeSidebar}>
             Encuentranos
           </NavLink>
           <div  className='flex items-center text-md px-3 py-2 text-pink-600 hover:text-orange-400 transition-colors' onClick={openModal}  >
