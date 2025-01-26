@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 
 const App = () => {
+  //
   return (
     <div className="h-screen w-screen bg-pink-100 flex flex-col md:flex-row justify-center items-center">
       <div className="flex flex-col items-center mb-4 md:mb-0">
@@ -16,7 +17,7 @@ const App = () => {
           </div>
         </div>
       </div>
-
+       
       <div className="hidden md:flex flex-col md:flex-row justify-center gap-2 ml-0 md:ml-10">
         <div className="flex flex-col items-center mb-4 md:mb-0">
           <Image
