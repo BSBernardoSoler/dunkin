@@ -35,12 +35,6 @@ export const Header = () => {
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-white border-b border-slate-800">
-   
-
-      
-       
-      
-      
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           <div className="flex-shrink-0 flex items-center">
@@ -57,7 +51,7 @@ export const Header = () => {
           <div className="md:hidden">
             <button
               onClick={toggleSidebar}
-              className="text-orange-400 p-2 rounded-md focus:outline-none"
+              className="text-green-600 p-2 rounded-md focus:outline-none"
             >
               {showSidebar ? <X size={24} /> : <Menu size={24} />}
             </button>

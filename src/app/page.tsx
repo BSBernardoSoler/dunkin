@@ -4,7 +4,7 @@ import Image from 'next/image';
 const App = () => {
   //
   return (
-    <div className="h-screen w-screen bg-pink-100 flex flex-col md:flex-row justify-center items-center">
+    <div className="h-screen w-screen flex flex-col md:flex-row justify-center items-center">
       <div className="flex flex-col items-center mb-4 md:mb-0">
         <div className="text-center">
           <h1 className="text-pink-600 font-bold text-5xl md:text-7xl">DELEITA</h1>
