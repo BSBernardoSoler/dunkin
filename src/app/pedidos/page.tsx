@@ -1,4 +1,5 @@
 "use client"
+import { FloatingCards } from '@/components/common/FloatingCard';
 import Image from 'next/image';
 import React from 'react';
 
@@ -17,7 +18,7 @@ const OrderTrackingForm: React.FC<OrderTrackingFormProps> = ({ onSearch }) => {
   };
 
   return (
-    <form onSubmit={handleSearch} className="flex flex-col gap-6">
+    <form onSubmit={handleSearch} className="flex flex-col gap-6 border-orange-200 border rounded-md p-10 border-solid bg-white ">
       <div className="flex flex-col">
         <label htmlFor="info" className="text-pink-600 font-bold text-lg">Información</label>
         <input
@@ -69,9 +70,11 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="h-screen w-screen bg-white flex flex-col items-center justify-center p-4">
-      <div className="w-full max-w-4xl bg-white rounded-xl p-8 flex flex-col md:flex-row items-center gap-12">
+    <div className="bg-white bg-opacity-70 h-screen w-screen flex flex-col items-center justify-center p-4">
+      <div className="w-full max-w-4xl rounded-xl p-8 flex flex-col md:flex-row items-center gap-12">
+          
         <div className="flex-shrink-0 w-full md:w-1/3">
+        <FloatingCards>
           <Image
             src="/images/IMAGEN 8.png"
             alt="Delivery Scooter"
@@ -79,7 +82,9 @@ const App: React.FC = () => {
             height={200}
             className="w-full h-auto"
           />
+          </FloatingCards>
         </div>
+        
         <div className="flex-1 w-full">
           <OrderTrackingForm onSearch={handleSearch} />
         </div>

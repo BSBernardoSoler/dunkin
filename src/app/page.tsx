@@ -1,5 +1,6 @@
 import React from 'react';
 import Image from 'next/image';
+import { FloatingCards } from '@/components/common/FloatingCard';
 
 const App = () => {
   //
@@ -19,6 +20,7 @@ const App = () => {
       </div>
        
       <div className="hidden md:flex flex-col md:flex-row justify-center gap-2 ml-0 md:ml-10">
+      <FloatingCards>
         <div className="flex flex-col items-center mb-4 md:mb-0">
           <Image
         src="/images/IMAGEN 1.png"
@@ -28,6 +30,8 @@ const App = () => {
         className="rounded-lg"
           />
         </div>
+        </FloatingCards>
+        <FloatingCards>
         <div className="flex flex-col items-center mb-4 md:mb-0">
           <Image
         src="/images/IMAGEN 2.png"
@@ -37,7 +41,9 @@ const App = () => {
         className="rounded-lg"
           />
         </div>
-        <div className="flex flex-col items-center">
+        </FloatingCards>
+         <FloatingCards>
+         <div className="flex flex-col items-center">
           <Image
         src="/images/IMAGEN 3.png"
         alt="Drink 3"
@@ -46,6 +52,7 @@ const App = () => {
         className="rounded-lg"
           />
         </div>
+         </FloatingCards>
       </div>
     </div>
   );

@@ -1,5 +1,5 @@
-"use client"
-import React, { useState } from "react";
+"use client";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X } from "lucide-react";
 
@@ -14,6 +14,12 @@ type NavigationMenuProps = {
 
 const NavigationMenu: React.FC<NavigationMenuProps> = ({ items }) => {
     const [isOpen, setIsOpen] = useState(false);
+    const [activeIndex, setActiveIndex] = useState<number>(0); // Selecciona el primer elemento por defecto
+
+    const handleItemClick = (index: number) => {
+        setActiveIndex(index);
+        setIsOpen(false);
+    };
 
     return (
         <div className="md:w-1/4 h-full bg-white shadow-md border-r-8 border-orange-400 md:pl-20 pt-5">
@@ -25,9 +31,18 @@ const NavigationMenu: React.FC<NavigationMenuProps> = ({ items }) => {
             </button>
             <ul className={`flex flex-col text-pink-600 font-bold text-lg md:block ${isOpen ? 'block' : 'hidden'}`}>
                 {items.map((item, index) => (
-                    <Link href={`/menu/${item.url}`} key={index} onClick={() => setIsOpen(!isOpen)}>
+                    <Link 
+                        href={`/menu/${item.url}`} 
+                        key={index} 
+                        onClick={() => handleItemClick(index)}
+                    >
                         <li
-                            className="px-4 py-3 hover:text-orange-500 cursor-pointer"
+                            className={`px-3 py-3 cursor-pointer rounded-full  transition-colors m-1 
+                            ${
+                                activeIndex === index 
+                                    ? "bg-orange-400 bg-opacity-90 text-white" 
+                                    : "hover:bg-orange-400 hover:bg-opacity-90 hover:text-white"
+                            }`}
                         >
                             {item.title}
                         </li>

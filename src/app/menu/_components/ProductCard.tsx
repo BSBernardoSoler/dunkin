@@ -1,5 +1,7 @@
+"use client"
 import React from "react";
 import Image from "next/image";
+import styled from "styled-components";
 
 export interface ProductCardProps {
     id?: string;
@@ -12,7 +14,8 @@ export interface ProductCardProps {
 
 const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, price }) => {
     return (
-        <div className="bg-white shadow-md rounded-lg p-4 flex flex-col sm:flex-row w-full sm:w-64 max-w-xs mx-auto">
+        <StyledWrapper>
+        <div className="card h-full  bg-white shadow-md rounded-lg p-4 flex flex-col sm:flex-row w-full sm:w-64 max-w-xs mx-auto">
             <div className="w-full sm:w-28 flex-shrink-0 mb-4 sm:mb-0">
                 <Image
                     width={70}
@@ -38,7 +41,23 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, pr
                 </button>
             </div>
         </div>
+        </StyledWrapper>
     );
 };
+
+
+const StyledWrapper = styled.div`
+.card {
+ transform-style: preserve-3d;
+ perspective: 1000px;
+ transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+ cursor: pointer;
+}
+
+.card:hover {
+ transform: rotateY(10deg)  scale(1.05);
+ box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+`;
 
 export default ProductCard;

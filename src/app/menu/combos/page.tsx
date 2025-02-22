@@ -4,7 +4,7 @@ import ProductCard, { ProductCardProps } from '../_components/ProductCard';
 
 export default function Combos() {
     return (
-        <div className="flex flex-col max-h-screen min-h-screen mt-2 mt-2">
+        <div className="flex flex-col max-h-screen min-h-screen  mt-2">
             {/* Sección de Productos */}
             <main className="flex-1 p-8 overflow-y-auto max-h-[calc(100vh-160px)]">
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
