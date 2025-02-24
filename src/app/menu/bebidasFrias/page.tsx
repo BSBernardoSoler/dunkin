@@ -1,6 +1,7 @@
 import React from 'react';
 import { bebidasFriasWithId } from '../_data/dataMenu';
 import ProductCard, { ProductCardProps } from '../_components/ProductCard';
+import { tree } from 'next/dist/build/templates/app-page';
 
 export default function BebidasFrias() {
     return (
@@ -15,6 +16,7 @@ export default function BebidasFrias() {
                             title={item.title}
                             description={item.description}
                             price={item.price}
+                            isbebida={true}
                         />
                     ))}
                 </div>

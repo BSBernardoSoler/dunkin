@@ -10,9 +10,10 @@ export interface ProductCardProps {
     description: string;
     price: string;
     originalPrice?: string;
+    isbebida?:boolean;
 }
 
-const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, price }) => {
+const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, price,isbebida }) => {
     return (
         <StyledWrapper>
         <div className="card h-full  bg-white shadow-md rounded-lg p-4 flex flex-col sm:flex-row w-full sm:w-64 max-w-xs mx-auto">
@@ -29,13 +30,16 @@ const ProductCard: React.FC<ProductCardProps> = ({ image, title, description, pr
                 <div>
                     <h3 className="font-bold text-md text-gray-800">{title}</h3>
                     <p className="text-xs text-gray-600 mb-2">{description}</p>
-                    <p className="font-bold text-orange-500 text-md">S/ {price}</p>
+                    <p className="font-bold text-orange-500 text-md">{price}</p>
                 </div>
-                <div className="flex justify-around mt-2 text-gray-600 text-xs">
+                {isbebida ? 
+                    <div className="flex justify-around mt-2 text-gray-600 text-xs">
                     <span>12oz</span>
                     <span>16oz</span>
                     <span>24oz</span>
-                </div>
+                    </div>
+                : <></>
+                }
                 <button className="mt-2 w-full bg-orange-500 text-white py-2 rounded-md font-semibold text-sm hover:bg-orange-600">
                     Agregar
                 </button>

@@ -15,6 +15,7 @@ export default function BebidasCalientes() {
                   title={item.title}
                   description={item.description}
                   price={item.price}
+                  isbebida={true}
                 />
               ))}
             </div>
