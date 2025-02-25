@@ -48,6 +48,7 @@ const StyledWrapper = styled.div`
     position: relative;
     width: 100%;
     height: 100%;
+    cover:true
     overflow: hidden;
     background: radial-gradient(
       circle,

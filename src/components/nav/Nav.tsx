@@ -2,11 +2,12 @@
 
 import Image from 'next/image';
 import Link from 'next/link';
-import { LayoutDashboard, LogOut, Menu, X } from 'lucide-react';
+import { LogOut, Menu, X ,ShoppingCart } from 'lucide-react';
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
 import LoginModal from '../login/LoginComponent'; // Asegúrate de ajustar la ruta según tu estructura.
+import ProductCard from '@/app/menu/_components/ProductCard';
 
 
 
@@ -64,6 +65,12 @@ export const Header = () => {
             <div  className='flex items-center text-md px-3 py-2 text-pink-600 hover:text-orange-400 transition-colors' onClick={openModal}  >
             Iniciar Sesion
           </div>
+          <NavLink  textColor="black"href="/carrito">
+          <ShoppingCart/>
+          </NavLink>
+
+          
+          
           </div>
 
           <div className="relative flex items-center space-x-3">
@@ -126,6 +133,9 @@ export const Header = () => {
           <div  className='flex items-center text-md px-3 py-2 text-pink-600 hover:text-orange-400 transition-colors' onClick={openModal}  >
             Iniciar Sesion
           </div>
+          <NavLink  textColor="black"href="/carrito">
+          <ShoppingCart/>
+          </NavLink>
 
           <button
             onClick={closeSidebar}

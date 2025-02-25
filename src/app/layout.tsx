@@ -3,7 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/nav/Nav";
 import Pattern from "@/components/common/background";
-import FooterComponent from "../components/common/Footer";
+import FooterComponent from "@/components/common/Footer";
+import Providers from "@/redux/providers"; // Importa tu componente Providers
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,23 +23,22 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode;
-}>) {
+}) {
   return (
     <html lang="en">
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      > 
-         <Pattern/>
-         <Header/>
-        <div className="flex flex-col min-h-screen">
-        <main className="flex-grow">
-        {children}
-        </main>
-        <FooterComponent/>
-        </div>
-        
+      >
+        <Providers> {/* Proveedor de Redux */}
+          <Pattern />
+          <Header />
+          <div className="flex flex-col min-h-screen">
+            <main className="flex-grow">{children}</main>
+            <FooterComponent />
+          </div>
+        </Providers>
       </body>
     </html>
   );

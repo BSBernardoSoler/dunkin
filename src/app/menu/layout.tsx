@@ -20,7 +20,7 @@ export default function layout({
   return (
     <div className="h-screen w-screen flex flex-col md:flex-row bg-white bg-opacity-60 mt-24">
     <NavigationMenu items={navigationItems} />
-     <div className='min-h-screen'>
+     <div className='min-h-screen '>
      {children}
      </div>
     </div>
